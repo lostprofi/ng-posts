@@ -6,5 +6,6 @@
             </mat-panel-title>
         </mat-expansion-panel-header>
         <p>{{post.postText}}</p>
+        <button type="button" (click)="onClick(post._id)"> Delete </button>
     </mat-expansion-panel>
 </mat-accordion>

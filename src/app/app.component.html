@@ -4,4 +4,4 @@
 <mat-card>
   <app-add-post (savePost)="catchSavePost($event)"></app-add-post>
 </mat-card>
-<app-post-list [posts]="posts"></app-post-list>
+<app-post-list [posts]="posts" (delPost)="catchDelPost($event)"></app-post-list>

@@ -56,6 +56,18 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.delete('/:postId', async (request, res) => {
+  const { postId } = request.params;
+
+  try {
+    await PostModel.findByIdAndDelete(postId);
+    const posts = await PostModel.find();
+    res.json(posts);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });

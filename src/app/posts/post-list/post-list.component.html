@@ -1,11 +1,14 @@
 <mat-accordion>
-    <mat-expansion-panel *ngFor="let post of posts">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                {{post.title}}
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>{{post.postText}}</p>
-        <button type="button" (click)="onClick(post._id)"> Delete </button>
-    </mat-expansion-panel>
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ post.title }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{ post.postText }}</p>
+
+    <button mat-icon-button color="warn" type="button" (click)="onClick(post._id)" class="btn-delete">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-expansion-panel>
 </mat-accordion>
